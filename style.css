@@ -1,0 +1,29 @@
+header{background-color: rgb(39, 25, 25);}
+body{background-color: #111111f6;
+color: whitesmoke;}
+
+
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center; 
+}
+
+.searchbar input[type=text]{
+
+    padding-right: 50% ;
+    padding-top: 15%;
+    border: none;
+    margin: 15px;
+    font-size: 2em;
+    background-color: rgba(214, 214, 214, 0.966); 
+
+}
+
+::placeholder{
+    
+    color: black;
+    opacity: 1;
+}
