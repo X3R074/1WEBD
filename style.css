@@ -1,10 +1,18 @@
+:root{padding: 0px;
+margin: 0px;
+border: none;}
+
 header{background-color: rgb(22, 22, 22);
 border: none;
 margin: 0px;
 padding: 0px;
+border-radius: 0px;
 }
 
-body{background-color: rgb(0, 0, 71);
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(0, 0, 71);
 color: whitesmoke;}
 
 
@@ -20,7 +28,7 @@ color: whitesmoke;}
 
    
     border: none;
-    margin: 15px;
+    margin: 10px;
     font-size: 2em;
     background-color: rgba(214, 214, 214, 0.966); 
 
@@ -30,4 +38,18 @@ color: whitesmoke;}
     
     color: black;
     opacity: 1;
+}
+
+
+#cards {
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+width: 25%;
+align-items: center;
+justify-content: center;
+
+
+
+
 }
