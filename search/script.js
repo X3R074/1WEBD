@@ -63,9 +63,13 @@ async function getData() {
                 let more = document.createElement('a')
                 more.href = "../movie/movie.html"  
                 more.textContent= "Click for more informations"
+                more.addEventListener('click', function (){
+                    filmMore = (movieData.Search[i])
+                    localStorage.setItem('selectedMovie', JSON.stringify(filmMore));
+                    console.log(filmMore);  
+                } )
 
-                filmMore = (movieData.Search[i].imdbID)
-                console.log(filmMore);
+               
                 
                 
                 Div.appendChild(image);
@@ -84,11 +88,4 @@ async function getData() {
     }
     
     
-   /* async function main () {
-        await getData();
-        console.log("Titre du film 3:", movieData.Search[3].Title)
-
-        
-
-    }
-    main();*/
+   

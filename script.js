@@ -1,8 +1,8 @@
 const apikey = "faef8cac" //ceci est ma clé API
 //https://www.omdbapi.com/?apikey=faef8cac&s=
 
-const containten= document.getElementById('tendances');
-const container = document.getElementById('2024')
+const containten= document.getElementsByClassName('tendances');
+const container = document.getElementsByClassName('2024')
 let movieData, movieData2;
 async function getData() {
 try{
