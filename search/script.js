@@ -6,6 +6,7 @@ let movieData
 let film = document.getElementById("search")
 let filmMore
 let page =1;
+let button = document.getElementById("morePages");
 
 film.addEventListener('input', async ()=>{
     console.log(film.value);
@@ -18,7 +19,10 @@ film.addEventListener('input', async ()=>{
     }
 })
 
-
+button.addEventListener('click', function(){
+    page++;
+    getData(page);
+})
 
 //window.onload = getData ();
 async function getData(page = 1) {
@@ -51,7 +55,7 @@ async function getData(page = 1) {
 
 
                 let Div =document.createElement('div')
-                Div.id=("carte");    
+                Div.id=("movie");    
 
                 titre = document.createElement('h2');
                 image = document.createElement('img');

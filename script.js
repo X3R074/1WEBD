@@ -26,7 +26,7 @@ try{
 
 async function getData2() {
     try{
-        const reponse = await fetch (`https://omdbapi.com/?apikey=${apikey}&s=Life&y=2024`);
+        const reponse = await fetch (`https://omdbapi.com/?apikey=${apikey}&s=Red&y=2024`);
             if (!reponse.ok){
                 throw new Error(`Erreur ${reponse.status}`)
             }
@@ -70,9 +70,9 @@ async function main (){
     for (let i = 0; i<10; i++){
     let MaDiv=document.createElement('div')
     MaDiv.id =("carte2");
-    let titre2 = document.createElement('h2');
     let image2 = document.createElement('img');
     image2.src = (movieData2.Search[i].Poster)
+    let titre2 = document.createElement('h2');
     titre2.textContent = (movieData2.Search[i].Title);
     let more2 = document.createElement('a')
     more2.href = "../movie/movie.html"  

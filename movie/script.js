@@ -38,9 +38,9 @@ let Div =document.createElement('div')
     let actors = document.createElement('h5')
     image.src = (film.Poster);
     titre.textContent = (film.Title);
-    description.textContent = (film.Plot);
-    genre.textContent=(film.Genre);
-    actors.textContent=(film.Actors)
+    description.textContent = ("Plot :", film.Plot);
+    genre.textContent=("Genre :",film.Genre);
+    actors.textContent=("Actors :", film.Actors)
     let more = document.createElement('a')
     Div.appendChild(image);
     Div.appendChild(titre);

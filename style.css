@@ -5,12 +5,13 @@ border: none;}
 header{background-color: rgb(22, 22, 22);
 border: none;
 margin: 0px;
-padding: 5%;
+padding: 20px;
 border-radius: 0px;
 }
 .a{
     color: red;
     font-size: 1%;
+    padding: 2px;
 }
 
 
@@ -48,16 +49,19 @@ color: whitesmoke;}
 
 #cards {
 display: flex;
-flex-direction: column;
-flex-wrap: wrap;
-width: 25%;
-align-items:center;
-justify-content:space-between;
-
-
-
-
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
+#movie{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: blue;
+    
+}
+
+
 
 #tendances { 
 display: flex;
@@ -70,6 +74,6 @@ justify-content: space-between;
 #two{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 }
