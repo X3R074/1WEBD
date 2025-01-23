@@ -3,7 +3,7 @@ const apikey = "faef8cac" //ceci est ma clé API
 
 const containten= document.getElementById('tendances');
 const container = document.getElementById('2024')
-let movieData;
+let movieData, movieData2;
 async function getData() {
 try{
     const reponse = await fetch (`https://omdbapi.com/?apikey=${apikey}&s=Lynch`);
@@ -21,9 +21,11 @@ try{
     console.error("Erreur:", error)
 }
 }
+
+
 async function getData2() {
     try{
-        const reponse = await fetch (`https://omdbapi.com/?apikey=${apikey}&s= &y=2024`);
+        const reponse = await fetch (`https://omdbapi.com/?apikey=${apikey}&y=2024`);
             if (!reponse.ok){
                 throw new Error(`Erreur ${reponse.status}`)
             }
@@ -45,8 +47,8 @@ async function main (){
     let Div =document.createElement('div')
     Div.id= ("carte");
     
-    titre =document.createElement('h2');
-    image = document.createElement('img');
+    let titre =document.createElement('h2');
+    let image = document.createElement('img');
     image.src = (movieData.Search[i].Poster);
     titre.textContent = (movieData.Search[i].Title);
     let more = document.createElement('a')
@@ -58,11 +60,11 @@ async function main (){
     containten.appendChild(Div);
 
     }
-   /* await getData2();
+    await getData2();
     for (let i = 0; i<10; i++){
     
-    titre2 = document.createElement('h2');
-    image2 = document.createElement('img');
+    let titre2 = document.createElement('h2');
+    let image2 = document.createElement('img');
     image2.src = (movieData2.Search[i].Poster)
     titre2.textContent = (movieData2.Search[i].Title);
     container.appendChild(titre2)
@@ -70,30 +72,7 @@ async function main (){
 
 
     
-    }*/
+    }
 
 }
 main ()
-/*fetch(url)
-
-.then(response => response.json()) 
-.then (data => {   myData = data;} )
-.catch(error => console.error('Erreur:', error))
-
-
-console.log(info.search[0].Title);
-console.log(info.Title);
-
-}
-
-
-
-
-function Display (movies) {
-
-    const moviesContainer = document.getElementsByClassName('movies');
-  
-    
-    }
-*/
-//console.log(info.info);

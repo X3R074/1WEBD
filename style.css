@@ -7,11 +7,12 @@ border: none;
 margin: 0px;
 padding: 5%;
 border-radius: 0px;
-
+}
 .a{
-font-size: 1%;
+    color: red;
+    font-size: 1%;
 }
-}
+
 
 body{
     margin: 0px;
