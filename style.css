@@ -5,8 +5,12 @@ border: none;}
 header{background-color: rgb(22, 22, 22);
 border: none;
 margin: 0px;
-padding: 0px;
+padding: 5%;
 border-radius: 0px;
+
+.a{
+font-size: 1%;
+}
 }
 
 body{
@@ -50,6 +54,13 @@ align-items: center;
 justify-content: center;
 
 
+
+
+}
+
+#tendances { 
+display: flex;
+flex-direction: row;
 
 
 }

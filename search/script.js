@@ -4,6 +4,7 @@ console.log("bonjour");
 const container = document.getElementById('cards');
 let movieData
 let film = document.getElementById("search")
+let filmMore
 
 //window.onload = getData ();
 async function getData() {
@@ -43,13 +44,24 @@ async function getData() {
         console.log("Titre du film 3:", movieData.Search[3].Title)
 
         for (let i = 0; i<10; i++){
-            if (movieData.Search[i].Poster != null) {
-        titre = document.createElement('h2');
-        image = document.createElement('img');
-        image.src = (movieData.Search[i].Poster);
-        titre.textContent = (movieData.Search[i].Title);
-        container.appendChild(titre);
-        container.appendChild(image);
+            if (movieData.Search[i].Poster != 'N/A') {
+                let Div =document.createElement('div')
+                Div.id=("carte");    
+                titre = document.createElement('h2');
+                image = document.createElement('img');
+                image.src = (movieData.Search[i].Poster);
+                titre.textContent = (movieData.Search[i].Title);
+                let more = document.createElement('a')
+                more.href = "../movie/movie.html"  
+                more.textContent= "Click for more informations"
+                filmMore = (movieData.Search[i].imdbID)
+                console.log(filmMore);
+                
+                
+                Div.appendChild(image);
+                Div.appendChild(titre);
+                Div.appendChild(more);
+                container.appendChild(Div);
         }}
 
     }
