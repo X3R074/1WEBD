@@ -1,5 +1,10 @@
-header{background-color: rgb(39, 25, 25);}
-body{background-color: #111111f6;
+header{background-color: rgb(22, 22, 22);
+border: none;
+margin: 0px;
+padding: 0px;
+}
+
+body{background-color: rgb(0, 0, 71);
 color: whitesmoke;}
 
 
@@ -13,8 +18,7 @@ color: whitesmoke;}
 
 .searchbar input[type=text]{
 
-    padding-right: 50% ;
-    padding-top: 15%;
+   
     border: none;
     margin: 15px;
     font-size: 2em;
