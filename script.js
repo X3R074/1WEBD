@@ -1,9 +1,10 @@
 const apikey = "faef8cac" //ceci est ma clé API
 //https://www.omdbapi.com/?apikey=faef8cac&s=
 
-const containten= document.getElementsByClassName('tendances');
-const container = document.getElementsByClassName('2024')
+const containten= document.getElementById('tendances');
+const container = document.getElementById('two')
 let movieData, movieData2;
+let filmMore;
 async function getData() {
 try{
     const reponse = await fetch (`https://omdbapi.com/?apikey=${apikey}&s=Lynch`);
@@ -25,7 +26,7 @@ try{
 
 async function getData2() {
     try{
-        const reponse = await fetch (`https://omdbapi.com/?apikey=${apikey}&y=2024`);
+        const reponse = await fetch (`https://omdbapi.com/?apikey=${apikey}&s=Life&y=2024`);
             if (!reponse.ok){
                 throw new Error(`Erreur ${reponse.status}`)
             }
@@ -54,6 +55,11 @@ async function main (){
     let more = document.createElement('a')
     more.href = "../movie/movie.html"  
     more.textContent= "Click for more informations"
+    more.addEventListener('click', function (){
+        filmMore = (movieData.Search[i])
+        localStorage.setItem('selectedMovie', JSON.stringify(filmMore));
+        console.log(filmMore);  
+    } )
     Div.appendChild(image);
     Div.appendChild(titre);
     Div.appendChild(more);
@@ -62,13 +68,24 @@ async function main (){
     }
     await getData2();
     for (let i = 0; i<10; i++){
-    
+    let MaDiv=document.createElement('div')
+    MaDiv.id =("carte2");
     let titre2 = document.createElement('h2');
     let image2 = document.createElement('img');
     image2.src = (movieData2.Search[i].Poster)
     titre2.textContent = (movieData2.Search[i].Title);
-    container.appendChild(titre2)
-    container.appendChild(image2)
+    let more2 = document.createElement('a')
+    more2.href = "../movie/movie.html"  
+    more2.textContent= "Click for more informations"
+    more2.addEventListener('click', function (){
+        filmMore = (movieData2.Search[i])
+        localStorage.setItem('selectedMovie', JSON.stringify(filmMore));
+        console.log(filmMore);  
+    } )
+    MaDiv.appendChild(titre2)
+    MaDiv.appendChild(image2)
+    MaDiv.appendChild(more2);
+    container.appendChild(MaDiv);
 
 
     

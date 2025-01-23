@@ -5,8 +5,7 @@ const container = document.getElementById('cards');
 let movieData
 let film = document.getElementById("search")
 let filmMore
-
-
+let page =1;
 
 film.addEventListener('input', async ()=>{
     console.log(film.value);
@@ -22,12 +21,12 @@ film.addEventListener('input', async ()=>{
 
 
 //window.onload = getData ();
-async function getData() {
+async function getData(page = 1) {
     
     try{
         
         console.log(film)
-        const reponse = await fetch(`https://omdbapi.com/?apikey=${apikey}&s=${nom}&type=movie`);
+        const reponse = await fetch(`https://omdbapi.com/?apikey=${apikey}&s=${nom}&type=movie&page=${page}`);
             if (!reponse.ok){
                 throw new Error(`Erreur ${reponse.status}`) 
             }
